@@ -65,3 +65,6 @@ typings/
 
 # target folder
 dist/
+
+# coveralls
+.coveralls.yml
