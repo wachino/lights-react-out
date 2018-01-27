@@ -12,7 +12,7 @@ const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
 
 module.exports = {
   devtool: 'eval-source-map',
-  entry: './src/index.js',
+  entry: './src/app.js',
   output: {
     path: path.resolve('dist'),
     filename: 'lights.js'
