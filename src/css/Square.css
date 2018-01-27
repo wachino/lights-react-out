@@ -1,0 +1,17 @@
+.square {
+  background: #fff;
+  border: 1px solid #999;
+  border-radius: 12px;
+  height: 34px;
+  padding: 0;
+  width: 34px;
+}
+
+.square.isOn {
+  background: rgb(75, 72, 72);
+}
+
+.square:hover {
+  background: rgb(214, 206, 206);
+  border: 1px solid rgb(29, 28, 28);
+}
