@@ -2,13 +2,12 @@
   "name": "lights-react-out",
   "version": "1.0.0",
   "description": "Lights out, implemented with reactJS",
-  "main": "index.js",
   "scripts": {
     "build": "webpack -p",
     "start": "webpack-dev-server",
     "test": "NODE_ENV=test ./node_modules/.bin/mocha \"test/**/*.test.js\" --recursive --timeout 15000 --exit;",
     "test:coverage": "nyc npm test && nyc report --reporter=text-lcov | coveralls",
-    "test:coverage-report": "npm run test:coverage; ./node_modules/opn-cli/cli.js coverage/index.html"
+    "test:coverage-report": "nyc npm test; ./node_modules/opn-cli/cli.js coverage/index.html"
   },
   "repository": {
     "type": "git",
