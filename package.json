@@ -29,7 +29,8 @@
   "homepage": "https://github.com/wachino/lights-react-out#readme",
   "dependencies": {
     "react": "^16.2.0",
-    "react-dom": "^16.2.0"
+    "react-dom": "^16.2.0",
+    "semistandard": "^12.0.0"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
