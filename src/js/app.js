@@ -1,16 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Square from 'components/Square'
+import Game from 'components/Game';
 ReactDOM.render(
-  <div>
-    <Square
-      isOn={true}
-      onClick={alert}
-    />
-    <Square
-      isOn={false}
-      onClick={alert}
-    />
-  </div>,
+  <Game
+    boardSize={5}
+  />,
   document.getElementById('root')
 );
