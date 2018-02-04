@@ -44,6 +44,10 @@ jobs:
       - checkout
 
       - run:
+          name: Install Packages
+          command: npm install
+
+      - run:
           name: Tests
           command: npm test
 
