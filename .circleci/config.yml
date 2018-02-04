@@ -1,8 +1,7 @@
 version: 2
 jobs:
+
   build:
-
-
     docker:
       - image: circleci/node:8
 
@@ -26,12 +25,73 @@ jobs:
           name: Install Packages
           command: npm install
 
+      - run:
+          name: Build
+          command: npm run build
+
+      - persist_to_workspace:
+          root: dist
+          paths:
+            - ./*
+
       - save_cache:
           paths:
             - node_modules
           key: v1-node-{{ arch }}-{{ .Branch }}-{{ checksum "package.json" }}
-          paths:
-            - node_modules
+
+  test:
+    docker:
+      - image: circleci/node:8
+
+    working_directory: ~/lights-react-out
+
+    steps:
+      - checkout
+
+      - run:
+          name: Install Packages
+          command: npm install
+
+      - run:
+          name: Tests
+          command: npm test
+
       - run:
           name: Tests coverage
           command: npm run test:coverage
+
+  deploy-gh-pages:
+    docker:
+      - image: circleci/node:8
+
+    working_directory: ~/lights-react-out
+
+    steps:
+      - checkout
+
+      - attach_workspace:
+          at: dist
+
+      - add_ssh_keys:
+          fingerprints:
+            - "33:2f:10:7f:27:39:93:a0:2d:99:d8:c8:81:30:29:82"
+
+      - run:
+          name: Deploy Github Pages
+          command: ./scripts/deploy-ghpages.sh dist
+
+
+workflows:
+  version: 2
+
+  build-deploy:
+    jobs:
+      - build
+      - test
+      - deploy-gh-pages:
+          requires:
+            - test
+            - build
+          filters:
+            branches:
+              only: master
