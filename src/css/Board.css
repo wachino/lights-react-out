@@ -1,3 +1,7 @@
-.row {
-  display: table-row;
+.board {
+  display: inline-block;
+}
+
+.board .row {
+  display: block;
 }

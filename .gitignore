@@ -68,3 +68,9 @@ dist/
 
 # coveralls
 .coveralls.yml
+
+# Dolphin
+.directory
+
+# keys
+.ssh/

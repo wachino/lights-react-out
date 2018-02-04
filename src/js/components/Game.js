@@ -16,17 +16,39 @@ export default class Game extends React.Component {
 
   render () {
     return (
-      <Board
-        lightStates={this.state.lightStates}
-        onClick={this.handleClick}
-      />
+      <div className='game'>
+        <Board
+          lightStates={this.state.lightStates}
+          onClick={this.handleClick}
+        />
+      </div>
     );
   }
 
   handleClick (row, col) {
     const lightStates = this.state.lightStates.slice();
+    if (this.isWinner()) {
+      return;
+    }
+
     lightStates[row][col] = !lightStates[row][col];
+    col > 0 && (lightStates[row][col - 1] = !lightStates[row][col - 1]);
+    row > 0 && (lightStates[row - 1][col] = !lightStates[row - 1][col]);
+    row < this.props.boardSize - 1 &&
+      (lightStates[row + 1][col] = !lightStates[row + 1][col]);
+    col < this.props.boardSize - 1 &&
+      (lightStates[row][col + 1] = !lightStates[row][col + 1]);
+
     this.setState({lightStates});
+    if (this.isWinner()) {
+      alert('Winneeer!!');
+    }
+  }
+
+  isWinner () {
+    return this.state.lightStates.every(
+      row => row.every(cell => cell)
+    );
   }
 }
 
