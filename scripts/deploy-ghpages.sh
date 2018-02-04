@@ -8,9 +8,6 @@ pwd
 remote=$(git config remote.origin.url)
 distFolder=$1
 
-# debug trace
-ls
-
 # make a directory to put the gp-pages branch
 mkdir gh-pages-branch
 cd gh-pages-branch
