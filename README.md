@@ -1,5 +1,5 @@
 # lights-react-out &middot; [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/wachino/lights-react-out/blob/master/LICENSE) [![Coverage Status](https://coveralls.io/repos/github/wachino/lights-react-out/badge.svg?branch=master)](https://coveralls.io/github/wachino/lights-react-out?branch=master) [![CircleCI](https://circleci.com/gh/wachino/lights-react-out.svg?style=shield)](https://circleci.com/gh/wachino/lights-react-out)
-Lights out game implemented with [reactjs](https://github.com/facebook/react).
+Lights out game implemented with [reactjs](https://github.com/facebook/react). The current version can be played at [Lights out game](http://wachino.github.io/lights-react-out).
 
 ## What's Lights out game?
 
@@ -24,7 +24,7 @@ This game is implemented with [reactjs](https://github.com/facebook/react). But.
 ### Commit messages
 It should match the pattern:
 
-`[{type}][LRO-{issuenr}] {commit description}.`
+`[LRO-{issuenr}][{type}] {commit description}.`
 
   * `Style refactor in example.js file (this is optional)`
   * `Updated README file to add style section (this is optional)`
