@@ -6,10 +6,13 @@ export default class Square extends React.Component {
   render () {
     return (
       <div className='cell'>
-        <button
+        <div
           className={'square' + (this.props.isOn ? ' isOn' : '')}
-          onClick={this.props.onClick}
-        />
+          onClick={this.props.onClick}>
+          <div className='cellOverlay'>
+            <div className='cdot'/>
+          </div>
+        </div>
       </div>
     );
   }
