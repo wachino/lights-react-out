@@ -52,6 +52,9 @@ jobs:
           command: npm run test:coverage
 
   deploy-gh-pages:
+    docker:
+      - image: circleci/node:8
+
     working_directory: ~/lights-react-out
 
     steps:
