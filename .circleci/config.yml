@@ -30,9 +30,9 @@ jobs:
           command: npm run build
 
       - persist_to_workspace:
-          root: .
+          root: dist
           paths:
-            - dist/*
+            - **
 
       - save_cache:
           paths:
@@ -70,7 +70,7 @@ jobs:
       - checkout
 
       - attach_workspace:
-        at: .
+        at: dist
 
       - run:
           name: Deploy Github Pages
