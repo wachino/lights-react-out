@@ -29,6 +29,11 @@ jobs:
           name: Build
           command: npm run build
 
+      - persist_to_workspace:
+          root: .
+          paths:
+            - dist/*
+
       - save_cache:
           paths:
             - node_modules
