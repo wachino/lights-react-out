@@ -72,6 +72,10 @@ jobs:
       - attach_workspace:
           at: dist
 
+      - add_ssh_keys:
+          fingerprints:
+            - "33:2f:10:7f:27:39:93:a0:2d:99:d8:c8:81:30:29:82"
+
       - run:
           name: Deploy Github Pages
           command: ./scripts/deploy-ghpages.sh dist
