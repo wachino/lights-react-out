@@ -69,6 +69,8 @@ jobs:
     steps:
       - checkout
 
+      - attach_workspace
+
       - run:
           name: Deploy Github Pages
           command: ./scripts/deploy-ghpages.sh dist
