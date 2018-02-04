@@ -30,7 +30,7 @@ jobs:
           command: npm run build
 
       - persist_to_workspace:
-          root: /tmp/workspace/build
+          root: .
           paths:
             - dist/*
 
@@ -70,7 +70,7 @@ jobs:
       - checkout
 
       - attach_workspace:
-        at: /tmp/workspace/build
+        at: .
 
       - run:
           name: Deploy Github Pages
