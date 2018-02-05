@@ -5,14 +5,14 @@
   "scripts": {
     "build": "webpack -p",
     "start": "webpack-dev-server",
-    "lint-pre-commit": "node eslint-pre-commit.js",
+    "lint-pre-commit": "node ./scripts/eslint-pre-commit.js",
     "test": "NODE_ENV=test ./node_modules/.bin/mocha \"test/**/*.test.js\" --recursive --timeout 15000 --exit;",
     "test:coverage": "nyc npm test && nyc report --reporter=text-lcov | coveralls",
     "test:coverage-report": "nyc npm test; ./node_modules/opn-cli/cli.js coverage/index.html",
     "postinstall": "node ./scripts/cp-pre-commit.js"
   },
   "pre-commit": [
-    "./scripts/eslint-pre-commit"
+    "lint-pre-commit"
   ],
   "repository": {
     "type": "git",
