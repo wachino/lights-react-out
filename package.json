@@ -5,10 +5,15 @@
   "scripts": {
     "build": "webpack -p",
     "start": "webpack-dev-server",
+    "lint-pre-commit": "node eslint-pre-commit.js",
     "test": "NODE_ENV=test ./node_modules/.bin/mocha \"test/**/*.test.js\" --recursive --timeout 15000 --exit;",
     "test:coverage": "nyc npm test && nyc report --reporter=text-lcov | coveralls",
-    "test:coverage-report": "nyc npm test; ./node_modules/opn-cli/cli.js coverage/index.html"
+    "test:coverage-report": "nyc npm test; ./node_modules/opn-cli/cli.js coverage/index.html",
+    "postinstall": "node cp-pre-commit.js"
   },
+  "pre-commit": [
+    "lint-pre-commit"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/wachino/lights-react-out.git"
@@ -46,6 +51,8 @@
     "nyc": "^11.4.1",
     "opn-cli": "^3.1.0",
     "path": "^0.12.7",
+    "shelljs": "^0.8.1",
+    "simple-git": "^1.89.0",
     "style-loader": "^0.20.1",
     "webpack": "^3.10.0",
     "webpack-dev-server": "^2.11.1"
