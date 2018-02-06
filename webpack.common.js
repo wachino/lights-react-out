@@ -1,7 +1,8 @@
 /*
-    ./webpack.config.js
+    ./webpack.common.js
 */
 const path = require('path');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
@@ -9,9 +10,9 @@ const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
   filename: 'index.html',
   inject: 'body'
 });
+const CleanWebpackPluginConfig = new CleanWebpackPlugin(['dist']);
 
 module.exports = {
-  devtool: 'inline-source-map',
   entry: './src/js/app.js',
   resolve: {
     modules: [
@@ -22,7 +23,7 @@ module.exports = {
   },
   output: {
     path: path.resolve('dist'),
-    filename: 'lights.js'
+    filename: '[name].bundle.js'
   },
   module: {
     loaders: [
@@ -38,5 +39,8 @@ module.exports = {
       }
     ]
   },
-  plugins: [HtmlWebpackPluginConfig]
+  plugins: [
+    CleanWebpackPluginConfig,
+    HtmlWebpackPluginConfig
+  ]
 };

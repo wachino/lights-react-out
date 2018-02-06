@@ -10,6 +10,7 @@
   width: 34px;
   height: 34px;
   background: rgb(253, 253, 253);
+  transition: background 0.5s;
   border: 1px solid #999;
   border-radius: 10px;
 }
