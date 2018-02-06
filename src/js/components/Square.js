@@ -16,6 +16,10 @@ export default class Square extends React.Component {
       </div>
     );
   }
+
+  shouldComponentUpdate (nextProps, nextState) {
+    return this.props.isOn !== nextProps.isOn;
+  }
 }
 
 Square.propTypes = {
