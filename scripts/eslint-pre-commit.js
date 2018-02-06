@@ -1,4 +1,5 @@
-const git = require('simple-git')();
+const path = require('path');
+const git = require('simple-git')(path.resolve(__dirname, '..'));
 const CLIEngine = require('eslint').CLIEngine;
 
 git.revparse(['-q', '--verify', 'MERGE_HEAD'], function (err, log) {
