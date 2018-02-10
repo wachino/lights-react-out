@@ -74,3 +74,6 @@ dist/
 
 # keys
 .ssh/
+
+# documentation
+doc/

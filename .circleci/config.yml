@@ -80,6 +80,31 @@ jobs:
           name: Deploy Github Pages
           command: ./scripts/deploy-ghpages.sh dist
 
+  doc-page:
+    docker:
+      - image: circleci/node:8
+
+    working_directory: ~/lights-react-out
+
+    steps:
+      - checkout
+
+      - add_ssh_keys:
+          fingerprints:
+            - "59:74:63:95:5f:c5:ce:84:e9:56:85:2b:d4:cd:6f:c3"
+
+      - run:
+          name: Install Dev Packages
+          command: npm install --only=dev
+
+      - run:
+          name: Generate doc
+          command: npm run doc
+
+      - run:
+          name: Deploy Doc to Github Pages
+          command: ./scripts/deploy-ghpages.sh doc https://github.com/AnguloHerrera/lights-react-out-doc.git
+
 
 workflows:
   version: 2
@@ -95,3 +120,7 @@ workflows:
           filters:
             branches:
               only: master
+      - deploy-gh-pages:
+          # filters:
+          #   branches:
+          #     only: master
