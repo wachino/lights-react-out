@@ -120,7 +120,7 @@ workflows:
           filters:
             branches:
               only: master
-      - deploy-gh-pages
+      - doc-page
           # filters:
           #   branches:
           #     only: master
