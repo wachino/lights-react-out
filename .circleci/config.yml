@@ -89,10 +89,6 @@ jobs:
     steps:
       - checkout
 
-      - add_ssh_keys:
-          fingerprints:
-            - "59:74:63:95:5f:c5:ce:84:e9:56:85:2b:d4:cd:6f:c3"
-
       - run:
           name: Install Dev Packages
           command: npm install
