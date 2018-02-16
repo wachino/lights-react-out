@@ -1,23 +1,46 @@
 .cell {
   width: 35px;
   height: 35px;
+  margin: 2px;
   display: inline-block;
+  vertical-align: middle;
 }
 
-.square {
+.cell .square {
   width: 34px;
   height: 34px;
-  background: #fff;
+  background: rgb(253, 253, 253);
+  transition: background 0.5s;
   border: 1px solid #999;
-  border-radius: 12px;
-  padding: 0;
+  border-radius: 10px;
+}
+
+.cell .square .cellOverlay {
+  height: 100%;
+  width: 100%;
+  display: inline-block;
+  border-radius: 10px;
+  transition: background 0.5s;
+}
+
+.cell .square:hover .cellOverlay {
+  background: rgba(50, 110, 240, 0.3);
+}
+
+.cell .square .cellOverlay .cdot{
+  width: 10px;
+  height: 10px;
+  margin: 12px;
+  border-radius: 20px;
+  transform: scale(0.1);
+  transition: transform 0.5s;
+}
+
+.cell .square:hover .cellOverlay .cdot{
+  transform: scale(1);
+  background: rgb(40, 100, 235);
 }
 
 .square.isOn {
-  background: rgb(75, 72, 72);
-}
-
-.square:hover {
-  background: rgb(214, 206, 206);
-  border: 1px solid rgb(29, 28, 28);
+  background: rgb(50, 50, 50);
 }
