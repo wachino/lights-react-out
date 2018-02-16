@@ -18,7 +18,12 @@ This game is implemented with [reactjs](https://github.com/facebook/react). But.
 * Continuous integration and deployment:
   
   * [circleci](https://circleci.com): It provides us automation servers where we can implement jobs to test and deploy the application in different Operating system.
-  * [coverrals](https://coveralls.io): Tool that allow to see the test coverage provided by [istanbul](https://istanbul.js.org).
+  * [coveralls](https://coveralls.io): Tool that allow to see the test coverage provided by [istanbul](https://istanbul.js.org).
+
+## Documentation
+You can find the React documentation on the website.
+
+The documentation is dynamic. It is generated with [JSDoc 3](http://usejsdoc.org). You can improve it by sending pull requests to this repository. The documentation is set into the code comments (You can see tags like @constructor, @name, @description...).
 
 ## Style
 ### Commit messages
