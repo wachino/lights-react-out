@@ -1,14 +1,16 @@
 {
   "parserOptions": {
-    "ecmaVersion": 5
+    "ecmaVersion": 6,
+    "ecmaFeatures": {
+      "jsx": true
+    }
   },
   "extends": [
     "semistandard",
     "plugin:react/recommended"
   ],
   "env": {
-    "browser": true,
-    "amd": true
+    "browser": true
   },
   "rules": {
     "max-len": [2, {"code":80}],

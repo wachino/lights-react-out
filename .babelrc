@@ -6,7 +6,13 @@
       "env",
       {
         "targets": {
-          "browsers": "> 5%"
+          "chrome": "62",
+          "android": "4.4.3",
+          "edge": "15",
+          "firefox": "56",
+          "ie": "10",
+          "ios": "10.3",
+          "safari": "10.1"
         }
       }
     ]
