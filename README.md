@@ -43,6 +43,17 @@ Where:
 If we need to include multiple words into a filename, then we will separate them using a dot ('.'). Example:
 ***hello.world.js***
 
+## Github
+### Authentication
+We are [signing Github commits with GPG](https://help.github.com/articles/signing-commits-with-gpg/).
+
+### Hooks
+#### Precommits
+ * **Lint**:
+    Each time we push a commit into Github project, the **precommit hook** triggers the eslint script, so if there is any eslint problem in the code changes, user will not be able to commit the changes.
+
+    The eslint configuration can be found in the ```.eslintrc.json``` config file.
+
 ## Licence
 Lights react out game is [MIT licensed](https://github.com/wachino/lights-react-out/blob/master/LICENSE).
 
