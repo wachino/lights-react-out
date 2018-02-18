@@ -2,13 +2,17 @@
   "parserOptions": {
     "ecmaVersion": 5
   },
+  "plugins": [
+    "mocha"
+  ],
   "extends": [
     "semistandard",
     "plugin:react/recommended"
   ],
   "env": {
     "browser": true,
-    "amd": true
+    "amd": true,
+    "mocha": true
   },
   "rules": {
     "max-len": [2, {"code":80}],
@@ -29,6 +33,7 @@
     "indent": [1, 2, { "SwitchCase":1 }],
     "key-spacing": [1, { "beforeColon": false, "afterColon": true }],
     "keyword-spacing": [1, { "before": true, "after": true }],
+    "mocha/no-exclusive-tests": "error",
     "new-cap": [1, { "newIsCap": true, "capIsNew": false }],
     "new-parens":1,
     "no-array-constructor":1,
