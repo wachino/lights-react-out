@@ -4,7 +4,7 @@ import Game from 'components/Game';
 
 ReactDOM.render(
   <Game
-    boardSize={5}
+    boardSize={6}
   />,
   document.getElementById('root')
 );

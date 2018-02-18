@@ -1,6 +1,9 @@
 {
   "parserOptions": {
-    "ecmaVersion": 5
+    "ecmaVersion": 6,
+    "ecmaFeatures": {
+      "jsx": true
+    }
   },
   "plugins": [
     "mocha"
@@ -11,7 +14,6 @@
   ],
   "env": {
     "browser": true,
-    "amd": true,
     "mocha": true
   },
   "rules": {
