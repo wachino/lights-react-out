@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import 'css/Game.css';
-import Board from 'components/Board';
+import '../../css/Game.css';
+import Board from './Board';
 
 export default class Game extends React.Component {
   constructor (props) {
@@ -41,7 +41,7 @@ export default class Game extends React.Component {
 
     this.setState({lightStates});
     if (this.isWinner()) {
-      alert('Winneeer!!');
+      console.log('Winner!!!');
     }
   }
 

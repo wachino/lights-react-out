@@ -6,7 +6,7 @@
     }
   },
   "plugins": [
-    "mocha"
+    "jest"
   ],
   "extends": [
     "semistandard",
@@ -14,7 +14,7 @@
   ],
   "env": {
     "browser": true,
-    "mocha": true
+    "jest": true
   },
   "rules": {
     "max-len": [2, {"code":80}],
@@ -35,7 +35,6 @@
     "indent": [1, 2, { "SwitchCase":1 }],
     "key-spacing": [1, { "beforeColon": false, "afterColon": true }],
     "keyword-spacing": [1, { "before": true, "after": true }],
-    "mocha/no-exclusive-tests": "error",
     "new-cap": [1, { "newIsCap": true, "capIsNew": false }],
     "new-parens":1,
     "no-array-constructor":1,
@@ -161,6 +160,11 @@
     "standard/computed-property-even-spacing": [1, "even"],
     "standard/no-callback-literal": 0,
     "promise/param-names":1,
-    "no-extra-semi": 2
+    "no-extra-semi": 2,
+    "jest/no-disabled-tests": "warn",
+    "jest/no-focused-tests": "error",
+    "jest/no-identical-title": "error",
+    "jest/prefer-to-have-length": "warn",
+    "jest/valid-expect": "error"
   }
 }
