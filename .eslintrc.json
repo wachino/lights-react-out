@@ -5,12 +5,16 @@
       "jsx": true
     }
   },
+  "plugins": [
+    "jest"
+  ],
   "extends": [
     "semistandard",
     "plugin:react/recommended"
   ],
   "env": {
-    "browser": true
+    "browser": true,
+    "jest": true
   },
   "rules": {
     "max-len": [2, {"code":80}],
@@ -156,6 +160,11 @@
     "standard/computed-property-even-spacing": [1, "even"],
     "standard/no-callback-literal": 0,
     "promise/param-names":1,
-    "no-extra-semi": 2
+    "no-extra-semi": 2,
+    "jest/no-disabled-tests": "warn",
+    "jest/no-focused-tests": "error",
+    "jest/no-identical-title": "error",
+    "jest/prefer-to-have-length": "warn",
+    "jest/valid-expect": "error"
   }
 }

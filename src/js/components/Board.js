@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import 'css/Board.css';
-import Square from 'components/Square';
+import '../../css/Board.css';
+import Square from './Square';
 
 export default class Board extends React.Component {
   render () {
